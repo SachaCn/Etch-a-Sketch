@@ -1,0 +1,33 @@
+:root {
+    --variableValue: 5;
+    --width: calc(100% / var(--variableValue));
+}
+
+#btn {
+    display: block;
+    margin: auto;
+    font-size: 50px;
+    padding: 0.5rem 2rem;
+    margin: 2rem auto 4rem;
+}
+
+#container-main {
+    width: 960px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    
+}
+
+.square {
+    aspect-ratio: 1 / 1;
+    background-color: rgb(172, 255, 227);
+    box-shadow: 0 0 0 2px black;
+    flex: 0 0 var(--width);
+    transition: 0s 1s;
+}
+
+.square:hover {
+    background-color: brown;
+    transition: 0s;
+}
