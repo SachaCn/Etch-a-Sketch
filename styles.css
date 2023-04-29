@@ -1,6 +1,7 @@
 :root {
     --variableValue: 5;
     --width: calc(100% / var(--variableValue));
+    --randomColor: #4a585d69;
 }
 
 #btn {
@@ -24,10 +25,12 @@
     background-color: rgb(172, 255, 227);
     box-shadow: 0 0 0 2px black;
     flex: 0 0 var(--width);
-    transition: 0s 1s;
+    transition: 0s 2s ease;
+    
 }
 
 .square:hover {
-    background-color: brown;
+    background-color: var(--randomColor);
     transition: 0s;
+ 
 }
