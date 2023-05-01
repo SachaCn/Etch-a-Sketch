@@ -5,11 +5,13 @@ let userChoice;
 let square;
 
 btn.addEventListener('click', () => {    
-    userChoice = Number(prompt('Choose your grid size', 5));
+    do {
+        userChoice = Number(prompt('Choose your grid size (max: 100)', 16));
+    } while (userChoice > 100)
     createGrid(userChoice);
     square = document.querySelectorAll('.square');
     square.forEach(ele => ele.addEventListener('mouseover', () =>{getRandomRgb(ele)}));
-    square.forEach(ele => ele.addEventListener('mouseover', () =>{changeBrightness(ele)}));
+    square.forEach(ele => ele.addEventListener('mouseover', () =>{changeBrightness(ele)})); 
 });
 
 function createGrid(value) {
@@ -18,7 +20,7 @@ function createGrid(value) {
     for(let i = 0; i < value ** 2; i++) {
         const newDiv = document.createElement('div');       
         newDiv.classList.add('square');
-        newDiv.classList.add('bright100');        
+        newDiv.classList.add('bright100');
         divContainer.appendChild(newDiv);
     }   
 };
@@ -32,13 +34,13 @@ function getRandomRgb(arg) {
     arg.style.backgroundColor = rgb;    
   }
 
-function genHexString(len) {
-    let hex = '';
-    for (let i = 0; i < len; ++i) {
-        hex += (Math.floor(Math.random() * 16)).toString(16);
-    }
-    root.style.setProperty('--randomColor', `#${hex}`);
-}
+// function genHexString(len) {
+//     let hex = '';
+//     for (let i = 0; i < len; ++i) {
+//         hex += (Math.floor(Math.random() * 16)).toString(16);
+//     }
+//     root.style.setProperty('--randomColor', `#${hex}`);
+// }
 
 function changeBrightness(arg) {
     switch(true) {
@@ -74,3 +76,12 @@ function changeBrightness(arg) {
             break;
     }
 }
+
+
+
+// function decrementBrightness(arg) {     
+//     let value ; 
+//     if(value < 100) {
+//        arg.style.filter = `brightness(calc(100% - ${value += 10}%))`; 
+//     }        
+// }

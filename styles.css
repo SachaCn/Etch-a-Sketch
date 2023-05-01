@@ -1,7 +1,7 @@
 :root {
     --variableValue: 5;
     --width: calc(100% / var(--variableValue));
-    --randomColor: #4a585d69;
+    --randomColor: #f5f1e1bb;
     --brighterValue: 0;
     --brighter: calc(100% - var(--brighteValue));
 }
@@ -9,25 +9,23 @@
 #btn {
     display: block;
     margin: auto;
-    font-size: 50px;
-    padding: 0.5rem 2rem;
-    margin: 2rem auto 4rem;
+    font-size: 18px;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem auto 1rem;
 }
 
 #container-main {
     width: 960px;
     display: flex;
     flex-wrap: wrap;
-    margin: auto;
-    
+    margin: auto;    
 }
 
 .square {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1.2/1;
     background-color: var(--randomColor);
-    box-shadow: 0 0 0 2px black;
+    box-shadow: 0 0 0 0.5px black;
     flex: 0 0 var(--width);
-    filter: brightness(100%);
 }
 
 .bright90 {
