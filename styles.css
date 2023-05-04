@@ -2,8 +2,6 @@
     --variableValue: 5;
     --width: calc(100% / var(--variableValue));
     --randomColor: #f5f1e1bb;
-    --brighterValue: 0;
-    --brighter: calc(100% - var(--brighteValue));
 }
 
 #btn {
@@ -26,44 +24,4 @@
     background-color: var(--randomColor);
     box-shadow: 0 0 0 0.5px black;
     flex: 0 0 var(--width);
-}
-
-.bright90 {
-    filter: brightness(90%);
-}
-
-.bright80 {
-    filter: brightness(80%);
-}
-
-.bright70 {
-    filter: brightness(70%);
-}
-
-.bright60 {
-    filter: brightness(60%);
-}
-
-.bright50 {
-    filter: brightness(50%);
-}
-
-.bright40 {
-    filter: brightness(40%);
-}
-
-.bright30 {
-    filter: brightness(30%);
-}
-
-.bright20 {
-    filter: brightness(20%);
-}
-
-.bright10 {
-    filter: brightness(10%);
-}
-
-.bright0 {
-    filter: brightness(0%);
 }
