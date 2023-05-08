@@ -35,7 +35,22 @@ function createGrid(value) {
 };
 
 function loop(func) {
-    square.forEach(ele => ele.addEventListener('mouseover', () =>{func(ele)}));
+    let isMouseDown = false;
+    square.forEach(ele => {
+        ele.addEventListener('mousedown', (e) => {
+            e.preventDefault();            
+            isMouseDown = true;
+            func(ele);           
+        });
+        ele.addEventListener('mouseover', () => {
+            if (isMouseDown) {
+                func(ele);
+            }
+        });
+        ele.addEventListener('mouseup', () => {
+            isMouseDown = false;
+        });
+    });
 };
 
 function changeMode(newMode) {
